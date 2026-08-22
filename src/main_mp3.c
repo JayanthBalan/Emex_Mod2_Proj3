@@ -45,10 +45,10 @@ int main(int argc, char *argv[]) {
             break;
         case invalid_option:
         default:
-            fprintf(stdout, "%s: Invalid Command\n", __FILE__);
-            fprintf(stdout, "%s: To view data, the command is \"./tag_reader -v filename.mp3\"\n\n", __FILE__);
-            fprintf(stdout, "%s: To modify data, the command is \"./tag_reader -x \"new data here\" filename.mp3\" where x is any valid modify command option\n\n", __FILE__);
-            fprintf(stdout, "%s: To receive help, the command is \"./tag_reader --help\" or \"./tag_reader -h\"\n\n", __FILE__);
+            fprintf(stderr, "%s: Invalid Command\n", __FILE__);
+            fprintf(stderr, "%s: To view data, the command is \"./tag_reader -v filename.mp3\"\n\n", __FILE__);
+            fprintf(stderr, "%s: To modify data, the command is \"./tag_reader -x \"new data here\" filename.mp3\" where x is any valid modify command option\n\n", __FILE__);
+            fprintf(stderr, "%s: To receive help, the command is \"./tag_reader --help\" or \"./tag_reader -h\"\n\n", __FILE__);
     }
 
     return 0;
@@ -69,7 +69,6 @@ static mp3_actions_e CLA_Processor(int argc, const char** argv, const char** buf
         if(argc != help_args) {
             return invalid_option;
         }
-
         return help_option;
     }
     if(strcmp(cmd_option, VIEW_CMD) == 0) {
