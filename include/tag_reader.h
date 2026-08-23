@@ -5,12 +5,19 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #define TAG_ID_LEN 3
 #define TAG_HEADER_LEN 10
+#define TAG_SIZE_LEN 4
 
 #define FRAME_CNT 6
 #define FRAME_ID_LEN 4
+#define FRAME_FLAG_LEN 2
+#define FRAME_SIZE_LEN 4
+#define FRAME_HEADER_LEN 10
+#define COMMENT_FRAME_DATA_LANGUAGE_LEN 3
+#define COMMENT_FRAME_DATA_BOM_LEN 2
 
 typedef enum _mp3_actions {
     view_details,
@@ -30,7 +37,8 @@ typedef enum _frame_type {
     ALBUM_FRAME,
     YEAR_FRAME,
     CONTENT_FRAME,
-    COMMENT_FRAME
+    COMMENT_FRAME,
+    NON_TARGET_FRAME
 } frame_type_e;
 
 typedef struct _tag_header {
@@ -60,5 +68,6 @@ typedef struct _mp3_tag {
 int masterModifyOperation(char*, const char*, mp3_actions_e);
 int viewOperation(const char*);
 int8_t parseMaster(FILE*, mp3_tag_t*);
+int8_t encode_data(mp3_tag_t*, frame_type_e);
 
 #endif
