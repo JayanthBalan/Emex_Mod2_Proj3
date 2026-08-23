@@ -156,7 +156,7 @@ int8_t encode_data(mp3_tag_t *tag, frame_type_e idx) {
             return -1;
         }
 
-        iso_uft16(tag, idx);
+        iso_utf16(tag, idx);
         return 0;
     }
 

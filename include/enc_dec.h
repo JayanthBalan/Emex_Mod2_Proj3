@@ -8,5 +8,6 @@
 #include <stdlib.h>
 
 void utf16_iso(uint8_t*, size_t);
+void iso_utf16(mp3_tag_t*, frame_type_e);
 
 #endif
