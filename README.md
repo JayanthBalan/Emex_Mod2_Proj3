@@ -22,6 +22,7 @@
 
 ## Commands
 
+```
 ./mp3_tag_reader -e -t "New Song" sample.mp3
 ./mp3_tag_reader -e -a "New Artist" sample.mp3
 ./mp3_tag_reader -e -A "New Album" sample.mp3
@@ -31,6 +32,7 @@
 ./mp3_tag_reader -h
 ./mp3_tag_reader --help
 ./mp3_tag_reader -v filename.mp3
+```
 
 ### Build Options
 
