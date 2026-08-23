@@ -36,10 +36,10 @@
 
 ### Build Options
 
-make
-make clean
+`make`
+`make clean`
 
 ### Run Options
 
-bash run.bash
-./run.bash
+`bash run.bash`
+`./run.bash`
