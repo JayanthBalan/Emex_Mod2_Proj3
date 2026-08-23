@@ -37,4 +37,3 @@ parse_mp3.o: $(CFILE)/parse_mp3.c $(HFILE)/enc_dec.h $(HFILE)/tag_reader.h
 
 clean:
 	rm -f *.o mp3_tag_reader
-	rm -f $(TFILE)/sample.mp3

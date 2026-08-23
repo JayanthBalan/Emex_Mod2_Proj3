@@ -26,7 +26,7 @@ void utf16_iso(uint8_t *dat, size_t len) {
     dest[i] = 0x00;
 }
 
-void iso_utf16(mp3_tag_t *mp3, frame_type_e index) {
+int8_t iso_utf16(mp3_tag_t *mp3, frame_type_e index) {
     size_t i = 0, j = 0, len = mp3->frames[index].size;
     uint8_t *src = mp3->frames[index].frame_data;
     uint8_t enc_type = *src;

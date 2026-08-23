@@ -19,7 +19,7 @@ typedef enum _cla_arg_cnts {
     modify_args = 5
 } cla_args_cnts_e;
 
-static mp3_actions_e CLA_Processor(int, const char**, const char**, const char**);
+static mp3_actions_e CLA_Processor(int, char**, const char**, const char**);
 static void helpOperation(void);
 static mp3_actions_e commandCMP2(const char*);
 
@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-static mp3_actions_e CLA_Processor(int argc, const char** argv, const char** buffer, const char** file) {
+static mp3_actions_e CLA_Processor(int argc, char** argv, const char** buffer, const char** file) {
     if(argc < min_args) {
         return invalid_option;
     }

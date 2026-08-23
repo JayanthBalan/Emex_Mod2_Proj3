@@ -68,43 +68,46 @@ modify_artist_default() {
 
 validate_default() {
 
-    echo "Default: View operation"
+    echo "View operation"
     view_default || return 1
 
     echo
-    echo "Default: Modify title operation"
+    echo "Modify title operation"
     modify_title_default || return 1
 
     echo
-    echo "Default: Modify album operation"
+    echo "Modify album operation"
     modify_album_default || return 1
 
     echo
-    echo "Default: Modify year operation"
+    echo "Modify year operation"
     modify_year_default || return 1
 
     echo
-    echo "Default: Modify content operation"
+    echo "Modify content operation"
     modify_content_default || return 1
 
     echo
-    echo "Default: Modify comment operation"
+    echo "Modify comment operation"
     modify_comment_default || return 1
 
     echo
-    echo "Default: Modify artist operation"
+    echo "Modify artist operation"
     modify_artist_default || return 1
 
     echo
-    echo "Default: Help operation"
+    echo "Help operation"
     help_default || return 1
+
+    echo "View operation"
+    view_default || return 1
 
     return 0
 }
 
 if [ $# -eq 1 ] && [ "$1" = "clean" ]
 then
-    echo "Cleanse target_files"
+    echo "Cleanse work files"
     exit 0
 fi
 

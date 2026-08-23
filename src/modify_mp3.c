@@ -1,10 +1,11 @@
 
 #include "tag_reader.h"
+#include "enc_dec.h"
 
 static int8_t get_data_offset(mp3_tag_t*, frame_type_e, size_t*);
 static int8_t write_frame_data(FILE*, mp3_tag_t*, frame_type_e);
 
-int masterModifyOperation(char *mod_dat, const char *filename, mp3_actions_e opera_type) {
+int masterModifyOperation(const char *mod_dat, const char *filename, mp3_actions_e opera_type) {
     FILE *fp = fopen(filename, "r+b");
     if(fp == NULL) {
         fprintf(stderr, "%s: File Pointer Error\n", __FILE__);

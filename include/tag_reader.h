@@ -65,7 +65,7 @@ typedef struct _mp3_tag {
     frame_t frames[FRAME_CNT];
 } mp3_tag_t;
 
-int masterModifyOperation(char*, const char*, mp3_actions_e);
+int masterModifyOperation(const char*, const char*, mp3_actions_e);
 int viewOperation(const char*);
 int8_t parseMaster(FILE*, mp3_tag_t*);
 int8_t encode_data(mp3_tag_t*, frame_type_e);
